@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.9.13 on linux)" generated="20230904 10:12:55.535" rpa="true" schemaversion="3">
+<suite id="s1" name="Tasks" source="/home/venkatesh/Desktop/Learning/robocorp_timesheet_automation/timesheet-robot/tasks.robot">
+<test id="s1-t1" name="Minimal task" line="23">
+<kw name="New Browser" library="RPA.Browser.Playwright">
+<arg>headless=${False}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<msg timestamp="20230904 10:12:58.722" level="INFO">{"browser": "chromium", "headless": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "deprecated_pos_args": [], "tracesDir": "/home/venkatesh/Desktop/Learning/robocorp_timesheet_automation/timesheet-robot/browser/traces/75433771-a97e-44e3-b137-12d04f65defb"}</msg>
+<msg timestamp="20230904 10:12:59.280" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"deprecated_pos_args":[],"tracesDir":"/home/venkatesh/Desktop/Learning/robocorp_timesheet_automation/timesheet-robot/browser/traces/75433771-a97e-44e3-b137-12d04f65defb"}</msg>
+<status status="PASS" starttime="20230904 10:12:58.719" endtime="20230904 10:12:59.281"/>
+</kw>
+<kw name="New Page" library="RPA.Browser.Playwright">
+<arg>${URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20230904 10:13:01.342" level="INFO">Successfully initialized new page object and opened url: https://portal.icaniotech.com/</msg>
+<msg timestamp="20230904 10:13:01.343" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<status status="PASS" starttime="20230904 10:12:59.290" endtime="20230904 10:13:01.344"/>
+</kw>
+<kw name="Wait For Elements State" library="RPA.Browser.Playwright">
+<arg>${SigninButtonXpath}</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20230904 10:13:01.447" level="INFO">Waited for Element with selector xpath=/html/body/div[1]/div[1]/div/section/div/div/div/div/div[1]/div/div/div/div[1]/div[2]/div/div[2]/div/div/div/section/div/div/div/form[2]/button at state visible</msg>
+<status status="PASS" starttime="20230904 10:13:01.348" endtime="20230904 10:13:01.448"/>
+</kw>
+<kw name="Click" library="RPA.Browser.Playwright">
+<arg>${SigninButtonXpath}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20230904 10:13:01.449" endtime="20230904 10:13:01.563"/>
+</kw>
+<kw name="Wait For Elements State" library="RPA.Browser.Playwright">
+<arg>${EmailInputId}</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20230904 10:13:03.115" level="INFO">Waited for Element with selector xpath=/html/body/div[1]/div[1]/div[2]/div/c-wiz/div/div[2]/div/div[1]/div/form/span/section/div/div/div[1]/div/div[1]/div/div[1]/input at state visible</msg>
+<status status="PASS" starttime="20230904 10:13:01.565" endtime="20230904 10:13:03.117"/>
+</kw>
+<kw name="Type Text" library="RPA.Browser.Playwright">
+<arg>${EmailInputId}</arg>
+<arg>${EMAIL}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20230904 10:13:03.119" level="INFO">Types the text 'venkatesh.b@icanio.com' in the given field.</msg>
+<status status="PASS" starttime="20230904 10:13:03.118" endtime="20230904 10:13:04.044"/>
+</kw>
+<kw name="Click" library="RPA.Browser.Playwright">
+<arg>${SigninNextButton}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20230904 10:13:04.045" endtime="20230904 10:13:04.435"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2 seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230904 10:13:06.438" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230904 10:13:04.437" endtime="20230904 10:13:06.439"/>
+</kw>
+<kw name="Wait For Elements State" library="RPA.Browser.Playwright">
+<arg>${PasswordInputName}</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20230904 10:13:06.467" level="INFO">Waited for Element with selector xpath=/html/body/div[1]/div[1]/div[2]/div/c-wiz/div/div[2]/div/div[1]/div/form/span/section[2]/div/div/div[1]/div[1]/div/div/div/div/div[1]/div/div[1]/input at state visible</msg>
+<status status="PASS" starttime="20230904 10:13:06.441" endtime="20230904 10:13:06.468"/>
+</kw>
+<kw name="Type Text" library="RPA.Browser.Playwright">
+<arg>${PasswordInputName}</arg>
+<arg>${PASSWORD}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20230904 10:13:06.472" level="INFO">Types the text 'Venkat@1999' in the given field.</msg>
+<status status="PASS" starttime="20230904 10:13:06.470" endtime="20230904 10:13:06.617"/>
+</kw>
+<kw name="Click" library="RPA.Browser.Playwright">
+<arg>${SigninNextButton}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20230904 10:13:06.619" endtime="20230904 10:13:06.820"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>20 seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230904 10:13:26.823" level="INFO">Slept 20 seconds</msg>
+<status status="PASS" starttime="20230904 10:13:06.821" endtime="20230904 10:13:26.824"/>
+</kw>
+<kw name="New Page" library="RPA.Browser.Playwright">
+<arg>https://portal.icaniotech.com/web/portals/time-sheet</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20230904 10:13:30.098" level="INFO">Successfully initialized new page object and opened url: https://portal.icaniotech.com/web/portals/time-sheet</msg>
+<status status="PASS" starttime="20230904 10:13:26.826" endtime="20230904 10:13:30.099"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2 seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230904 10:13:32.102" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230904 10:13:30.100" endtime="20230904 10:13:32.102"/>
+</kw>
+<kw name="Wait For Elements State" library="RPA.Browser.Playwright">
+<arg>id:${TimeSheetButton2}</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20230904 10:13:42.323" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/fail-screenshot-1.png" target="_blank"&gt;&lt;img src="browser/screenshot/fail-screenshot-1.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230904 10:13:42.324" level="INFO">See also file:///home/venkatesh/Desktop/Learning/robocorp_timesheet_automation/timesheet-robot/playwright-log.txt for additional details.</msg>
+<msg timestamp="20230904 10:13:42.325" level="FAIL">Error: locator.waitFor: Unknown engine "id:xpath" while parsing selector id:xpath=toggle-btn
+=========================== logs ===========================
+waiting for locator('id:xpath=toggle-btn') to be visible
+============================================================</msg>
+<status status="FAIL" starttime="20230904 10:13:32.103" endtime="20230904 10:13:42.330"/>
+</kw>
+<kw name="Get Text" library="RPA.Browser.Playwright">
+<var>${checkOut}</var>
+<arg>id:${TimeSheetButton2}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="NOT RUN" starttime="20230904 10:13:42.333" endtime="20230904 10:13:42.334"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"Check - Out" in ${checkOut}</arg>
+<arg>Log</arg>
+<arg>Checkout Successfully</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" starttime="20230904 10:13:42.336" endtime="20230904 10:13:42.337"/>
+</kw>
+<kw name="Run Keyword Unless" library="BuiltIn">
+<arg>"Check - in" in ${checkOut}</arg>
+<arg>Log</arg>
+<arg>Check in successfully</arg>
+<doc>*DEPRECATED since RF 5.0. Use Native IF/ELSE or `Run Keyword If` instead.*</doc>
+<msg timestamp="20230904 10:13:42.339" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<status status="NOT RUN" starttime="20230904 10:13:42.338" endtime="20230904 10:13:42.340"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>30 seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20230904 10:13:42.341" endtime="20230904 10:13:42.342"/>
+</kw>
+<kw name="Click" library="RPA.Browser.Playwright">
+<arg>${TimeSheetButton}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="NOT RUN" starttime="20230904 10:13:42.342" endtime="20230904 10:13:42.343"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>60 seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20230904 10:13:42.344" endtime="20230904 10:13:42.344"/>
+</kw>
+<kw name="Close Browser" library="RPA.Browser.Playwright">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" starttime="20230904 10:13:42.345" endtime="20230904 10:13:42.346"/>
+</kw>
+<status status="FAIL" starttime="20230904 10:12:58.710" endtime="20230904 10:13:42.348">Error: locator.waitFor: Unknown engine "id:xpath" while parsing selector id:xpath=toggle-btn
+=========================== logs ===========================
+waiting for locator('id:xpath=toggle-btn') to be visible
+============================================================</status>
+</test>
+<doc>Playwright template.</doc>
+<status status="FAIL" starttime="20230904 10:12:55.550" endtime="20230904 10:13:42.532"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tasks</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Tasks">Tasks</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20230904 10:13:42.339" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+</errors>
+</robot>
